@@ -11,6 +11,7 @@ body {
 
 .header {
     flex: 1;
+    text-align: center;
 }
 
 footer {
@@ -21,9 +22,10 @@ footer {
 .icon-container {
     position: absolute;
     top: 100px;  /* Adjust as needed */
-    left: 60px;  /* Adjust as needed */
+    justify-content: center;  /* Adjust as needed */
     display: flex;
     gap: 20px;  /* Adjust as needed */
+    width: 100%;
 }
 
 .email-icon:hover img {
