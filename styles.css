@@ -9,24 +9,32 @@ body {
     flex-direction: column;
 }
 
-.header {
-    flex: 1;
-    text-align: center;
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  /* Centers children vertically */
 }
 
-footer {
-    background-color: #d6d6d6;
+.header {
     text-align: center;
 }
 
 .icon-container {
-    position: absolute;
-    top: 100px;  /* Adjust as needed */
-    justify-content: center;  /* Adjust as needed */
     display: flex;
+    justify-content: center;
     gap: 20px;  /* Adjust as needed */
     width: 100%;
+    margin: auto;
 }
+
+
+
+footer {
+    background-color: #d6d6d6;
+    text-align: center;
+    margin-top: auto;
+}
+
 
 .email-icon:hover img {
     content: url("email_icon_02.jpg");
