@@ -12,7 +12,8 @@ body {
 .content {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;  /* Centers children vertically */
+    justify-content: flex-start;
+    flex: 1;  /* Add this line */
 }
 
 .header {
@@ -22,19 +23,16 @@ body {
 .icon-container {
     display: flex;
     justify-content: center;
-    gap: 20px;  /* Adjust as needed */
+    gap: 20px;
     width: 100%;
-    margin: auto;
+    /* Remove margin: auto; */
 }
-
-
 
 footer {
     background-color: #d6d6d6;
     text-align: center;
     margin-top: auto;
 }
-
 
 .email-icon:hover img {
     content: url("email_icon_02.jpg");
