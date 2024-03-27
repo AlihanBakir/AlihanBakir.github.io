@@ -18,9 +18,14 @@ footer {
     text-align: center;
 }
 
-.linkedin-logo {
+.icon-container {
     position: absolute;
     top: 100px;  /* Adjust as needed */
-    left: 60px;  /* Center horizontally */
-    transform: translateX(-50%);  /* Correct for the logo's own width */
+    left: 60px;  /* Adjust as needed */
+    display: flex;
+    gap: 20px;  /* Adjust as needed */
+}
+
+.email-icon:hover img {
+    content: url("email_icon_02.jpg");
 }
