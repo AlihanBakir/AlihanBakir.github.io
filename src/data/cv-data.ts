@@ -1,11 +1,11 @@
 export const personalInfo = {
-  name: "Alex Chen",
-  title: "Senior Software Engineer",
+  name: "Alihan BAKIR",
+  title: "Robotics Engineer",
   summary: "Full-stack engineer with 8+ years of experience building scalable web applications and distributed systems. Passionate about clean architecture, developer experience, and mentoring teams. Currently focused on cloud-native solutions and modern frontend frameworks.",
-  email: "alex@example.com",
-  location: "San Francisco, CA",
-  github: "github.com/alexchen",
-  linkedin: "linkedin.com/in/alexchen",
+  email: "alihan.bakir@epfl.ch",
+  location: "Lausanne, CH",
+  github: "https://github.com/AlihanBakir",
+  linkedin: "https://www.linkedin.com/in/alihanbakir/",
 };
 
 export const skills = {
