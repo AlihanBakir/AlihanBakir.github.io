@@ -6,7 +6,7 @@ export const personalInfo = {
   phone: "+41 21 693 57 37",
   // Relative path to a downloadable CV file placed in `public/` (e.g. `public/Alihan_BAKIR_CV.pdf`)
   // Use an absolute URL if hosting the file elsewhere.
-  cv: "/cv_alihanbakir.pdf",
+  cv: "/public/cv_alihanbakir.pdf",
   website: "www.alihanb.com",
   location: "EPFL STI IGM RRL, MED 1 2313 (Batiment MED) Station 9, 1015 Lausanne, Switzerland",
   github: "https://www.github.com/AlihanBakir",
