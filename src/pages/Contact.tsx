@@ -1,4 +1,4 @@
-import { Mail, MapPin, Github, Linkedin, Send } from "lucide-react";
+import { Mail, MapPin, Github, Linkedin, Phone, Globe, Send } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { personalInfo } from "@/data/cv-data";
 import { Button } from "@/components/ui/button";
@@ -38,8 +38,8 @@ const Contact = () => {
                 Get in Touch
               </h1>
               <p className="text-muted-foreground max-w-xl mx-auto">
-                Have a project in mind or want to discuss opportunities? 
-                I'm always open to interesting conversations and collaborations.
+                Interested in robotics research, collaboration opportunities, 
+                or just want to connect? Feel free to reach out.
               </p>
             </div>
 
@@ -58,11 +58,31 @@ const Contact = () => {
                       </div>
                       <span>{personalInfo.email}</span>
                     </a>
-                    <div className="flex items-center gap-3 text-muted-foreground">
-                      <div className="p-2 rounded-md bg-muted">
+                    <a
+                      href={`tel:${personalInfo.phone}`}
+                      className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group"
+                    >
+                      <div className="p-2 rounded-md bg-muted group-hover:bg-accent transition-colors">
+                        <Phone className="h-5 w-5" />
+                      </div>
+                      <span>{personalInfo.phone}</span>
+                    </a>
+                    <a
+                      href={`https://${personalInfo.website}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group"
+                    >
+                      <div className="p-2 rounded-md bg-muted group-hover:bg-accent transition-colors">
+                        <Globe className="h-5 w-5" />
+                      </div>
+                      <span>{personalInfo.website}</span>
+                    </a>
+                    <div className="flex items-start gap-3 text-muted-foreground">
+                      <div className="p-2 rounded-md bg-muted shrink-0">
                         <MapPin className="h-5 w-5" />
                       </div>
-                      <span>{personalInfo.location}</span>
+                      <span className="text-sm">{personalInfo.location}</span>
                     </div>
                   </div>
                 </div>
@@ -71,7 +91,7 @@ const Contact = () => {
                   <h2 className="section-title">Social Links</h2>
                   <div className="flex gap-3">
                     <a
-                      href={`https://${personalInfo.github}`}
+                      href={personalInfo.github}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-3 rounded-md bg-muted text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
@@ -80,7 +100,7 @@ const Contact = () => {
                       <Github className="h-5 w-5" />
                     </a>
                     <a
-                      href={`https://${personalInfo.linkedin}`}
+                      href={personalInfo.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-3 rounded-md bg-muted text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
@@ -93,14 +113,13 @@ const Contact = () => {
 
                 <div className="p-6 rounded-lg bg-card border border-border/50">
                   <h3 className="font-mono font-medium text-foreground mb-2">
-                    Prefer a quick call?
+                    Office Location
                   </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Book a 30-minute intro call to discuss your project or opportunity.
+                  <p className="text-sm text-muted-foreground">
+                    EPFL STI IGM RRL<br />
+                    MED 1 2313 (Batiment MED) Station 9<br />
+                    1015 Lausanne, Switzerland
                   </p>
-                  <Button variant="outline" className="w-full">
-                    Schedule a Call
-                  </Button>
                 </div>
               </div>
 
@@ -134,7 +153,7 @@ const Contact = () => {
                     <Input
                       id="subject"
                       name="subject"
-                      placeholder="What's this about?"
+                      placeholder="Research collaboration, question, etc."
                       required
                     />
                   </div>
@@ -144,7 +163,7 @@ const Contact = () => {
                     <Textarea
                       id="message"
                       name="message"
-                      placeholder="Tell me about your project or opportunity..."
+                      placeholder="Tell me about your research interest or collaboration idea..."
                       rows={6}
                       required
                     />

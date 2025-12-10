@@ -1,16 +1,23 @@
 import { useState } from "react";
-import { skills } from "@/data/cv-data";
+import { skills, skillCategories } from "@/data/cv-data";
 import { cn } from "@/lib/utils";
-
-const skillCategories = [
-  { key: "languages", label: "Languages" },
-  { key: "frontend", label: "Frontend" },
-  { key: "backend", label: "Backend" },
-  { key: "infrastructure", label: "Infrastructure" },
-  { key: "practices", label: "Practices" },
-] as const;
+import { Star, StarHalf } from "lucide-react";
 
 type SkillCategory = typeof skillCategories[number]["key"];
+
+const skillLevelStars: Record<string, number> = {
+  advanced: 5,
+  good: 4,
+  intermediate: 3,
+  basic: 2,
+};
+
+const skillLevelColors: Record<string, string> = {
+  advanced: "text-green-500",
+  good: "text-blue-500",
+  intermediate: "text-yellow-500",
+  basic: "text-orange-500",
+};
 
 export function SkillsSection() {
   const [activeFilter, setActiveFilter] = useState<SkillCategory | "all">("all");
@@ -18,6 +25,24 @@ export function SkillsSection() {
   const filteredCategories = activeFilter === "all" 
     ? skillCategories 
     : skillCategories.filter(cat => cat.key === activeFilter);
+
+  const renderStars = (level: string) => {
+    const stars = skillLevelStars[level] || 3;
+    return (
+      <div className="flex items-center gap-0.5">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <Star
+            key={i}
+            className={cn(
+              "h-3 w-3",
+              i < stars ? skillLevelColors[level] : "text-muted-foreground/30"
+            )}
+            fill={i < stars ? "currentColor" : "none"}
+          />
+        ))}
+      </div>
+    );
+  };
 
   return (
     <section className="py-16 border-t border-border/50">
@@ -54,15 +79,30 @@ export function SkillsSection() {
         </div>
         
         {/* Skills Grid */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {filteredCategories.map((category) => (
-            <div key={category.key} className="animate-fade-in">
-              <h3 className="font-mono text-sm font-medium text-foreground mb-3">
-                {category.label}
-              </h3>
+            <div 
+              key={category.key} 
+              className="p-6 rounded-lg bg-card border border-border/50 animate-fade-in"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="font-mono text-sm font-medium text-foreground">
+                  {category.label}
+                </h3>
+                {renderStars(category.key)}
+              </div>
               <div className="flex flex-wrap gap-2">
                 {skills[category.key].map((skill) => (
-                  <span key={skill} className="tech-tag">
+                  <span 
+                    key={skill} 
+                    className={cn(
+                      "px-2 py-1 text-xs font-mono rounded-md border",
+                      category.key === "advanced" && "bg-green-500/10 text-green-600 border-green-500/20",
+                      category.key === "good" && "bg-blue-500/10 text-blue-600 border-blue-500/20",
+                      category.key === "intermediate" && "bg-yellow-500/10 text-yellow-600 border-yellow-500/20",
+                      category.key === "basic" && "bg-orange-500/10 text-orange-600 border-orange-500/20"
+                    )}
+                  >
                     {skill}
                   </span>
                 ))}

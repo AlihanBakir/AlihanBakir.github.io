@@ -1,4 +1,4 @@
-import { Download, Mail, MapPin, Github, Linkedin } from "lucide-react";
+import { Download, Mail, MapPin, Github, Linkedin, Phone, Globe } from "lucide-react";
 import { personalInfo } from "@/data/cv-data";
 import { Button } from "@/components/ui/button";
 
@@ -28,7 +28,7 @@ export function HeroSection() {
           </p>
           
           {/* Contact Info */}
-          <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-8">
+          <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
             <a 
               href={`mailto:${personalInfo.email}`}
               className="flex items-center gap-2 hover:text-primary transition-colors"
@@ -36,10 +36,26 @@ export function HeroSection() {
               <Mail className="h-4 w-4" />
               {personalInfo.email}
             </a>
-            <span className="flex items-center gap-2">
-              <MapPin className="h-4 w-4" />
-              {personalInfo.location}
-            </span>
+            <a 
+              href={`tel:${personalInfo.phone}`}
+              className="flex items-center gap-2 hover:text-primary transition-colors"
+            >
+              <Phone className="h-4 w-4" />
+              {personalInfo.phone}
+            </a>
+            <a 
+              href={`https://${personalInfo.website}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-primary transition-colors"
+            >
+              <Globe className="h-4 w-4" />
+              {personalInfo.website}
+            </a>
+          </div>
+          <div className="flex items-start gap-2 text-sm text-muted-foreground mb-8">
+            <MapPin className="h-4 w-4 shrink-0 mt-0.5" />
+            <span>{personalInfo.location}</span>
           </div>
           
           {/* Social Links & CTA */}
@@ -51,7 +67,7 @@ export function HeroSection() {
             
             <div className="flex items-center gap-2">
               <a
-                href={`https://${personalInfo.github}`}
+                href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-all"
@@ -60,7 +76,7 @@ export function HeroSection() {
                 <Github className="h-5 w-5" />
               </a>
               <a
-                href={`https://${personalInfo.linkedin}`}
+                href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-all"

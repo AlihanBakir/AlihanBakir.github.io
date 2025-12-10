@@ -1,185 +1,297 @@
 export const personalInfo = {
   name: "Alihan BAKIR",
-  title: "Robotics Engineer",
-  summary: "Full-stack engineer with 8+ years of experience building scalable web applications and distributed systems. Passionate about clean architecture, developer experience, and mentoring teams. Currently focused on cloud-native solutions and modern frontend frameworks.",
+  title: "PhD Candidate in Robotics, Control, and Intelligent Systems",
+  summary: "Robotics researcher focused on full-body interaction with surface-based robots. Expertise in mechatronic system design, controller design, programming, signal processing, dynamics and kinematics. Currently pursuing PhD at EPFL's Reconfigurable Robotics Laboratory.",
   email: "alihan.bakir@epfl.ch",
-  location: "Lausanne, CH",
+  phone: "+41 78 208 7000",
+  website: "www.alihanb.com",
+  location: "EPFL STI IGM RRL, MED 1 2313 (Batiment MED) Station 9, 1015 Lausanne, Switzerland",
   github: "https://github.com/AlihanBakir",
   linkedin: "https://www.linkedin.com/in/alihanbakir/",
 };
 
 export const skills = {
-  languages: ["TypeScript", "Python", "Go", "Rust", "SQL"],
-  frontend: ["React", "Next.js", "Vue", "Tailwind CSS", "GraphQL"],
-  backend: ["Node.js", "FastAPI", "PostgreSQL", "Redis", "gRPC"],
-  infrastructure: ["AWS", "Kubernetes", "Docker", "Terraform", "CI/CD"],
-  practices: ["System Design", "Testing", "Agile", "Code Review", "Documentation"],
+  advanced: ["Platform IO", "Arduino", "MATLAB", "Python", "SolidWorks", "Eagle", "Slic3r PE", "PCB design", "Soldering"],
+  good: ["Java", "LaTeX", "Shotcut", "Premier Pro", "Illustrator"],
+  intermediate: ["Pronterface", "Cura", "AutoCAD"],
+  basic: ["COMSOL", "ANSYS", "Meshmixer", "Machine Learning", "ROS"],
 };
 
-export const experience = [
-  {
-    id: 1,
-    company: "TechCorp Inc.",
-    role: "Senior Software Engineer",
-    period: "2021 – Present",
-    location: "San Francisco, CA",
-    description: "Leading the platform team responsible for core infrastructure and developer tooling. Architected and delivered a new microservices framework that reduced deployment time by 60%.",
-    highlights: [
-      "Designed event-driven architecture handling 10M+ events/day",
-      "Mentored 5 junior engineers and established code review practices",
-      "Reduced infrastructure costs by 40% through optimization",
-    ],
-    tech: ["Go", "Kubernetes", "PostgreSQL", "gRPC", "AWS"],
-  },
-  {
-    id: 2,
-    company: "StartupXYZ",
-    role: "Full Stack Engineer",
-    period: "2018 – 2021",
-    location: "Remote",
-    description: "Early engineer at a Series A startup. Built the core product from MVP to serving 100K+ users. Owned the entire frontend architecture and contributed heavily to backend services.",
-    highlights: [
-      "Built real-time collaboration features using WebSockets",
-      "Implemented comprehensive testing strategy (95% coverage)",
-      "Led migration from monolith to microservices",
-    ],
-    tech: ["TypeScript", "React", "Node.js", "MongoDB", "Redis"],
-  },
-  {
-    id: 3,
-    company: "BigTech Co.",
-    role: "Software Engineer",
-    period: "2016 – 2018",
-    location: "Seattle, WA",
-    description: "Worked on the ads platform team, building tools for campaign management and analytics. Collaborated with cross-functional teams to deliver features impacting millions of users.",
-    highlights: [
-      "Optimized ad serving latency by 30%",
-      "Built internal dashboards used by 500+ employees",
-      "Contributed to open-source developer tools",
-    ],
-    tech: ["Java", "Python", "React", "Kafka", "Spark"],
-  },
-];
+export const skillCategories = [
+  { key: "advanced", label: "Advanced" },
+  { key: "good", label: "Good" },
+  { key: "intermediate", label: "Intermediate" },
+  { key: "basic", label: "Basic" },
+] as const;
 
 export const education = [
   {
-    institution: "University of California, Berkeley",
-    degree: "B.S. Computer Science",
-    period: "2012 – 2016",
-    notes: "Dean's List, Teaching Assistant for Data Structures",
+    institution: "EPFL - Reconfigurable Robotics Laboratory",
+    degree: "PhD Candidate, Robotics, Control, and Intelligent Systems",
+    period: "August 2023 - Present",
+    thesis: "Full-body Interaction with surface based robots",
+    advisor: "Dr. Jamie Paik",
+    highlights: ["Mechatronic system design", "Controller design", "Programming", "Signal processing", "Dynamics and kinematics"],
+  },
+  {
+    institution: "Bilkent University - Miniature Robotics Laboratory",
+    degree: "MSc, Mechanical Engineering",
+    period: "September 2020 - July 2023",
+    thesis: "A Miniature, Foldable, Collision Resilient Quadcopter",
+    advisor: "Dr. Onur Ozcan",
+    highlights: ["Engineering electrical/mechanical design", "Mobile robotics", "Linear system theory", "Dynamics of aerospace vehicles", "Flying robot control", "Autonomous flight", "Path planning", "Signal processing"],
+  },
+  {
+    institution: "Bilkent University - Department of Mechanical Engineering",
+    degree: "BSc, Mechanical Engineering",
+    period: "September 2016 - June 2020",
+    prepSchool: "English Language Prep School (September 2015 - May 2016)",
+    highlights: ["Engineering electrical/mechanical design", "Mobile robotics", "Controller design", "Mechatronic system manufacturing and programming", "Signal processing", "Dynamics and control"],
+  },
+];
+
+export const publications = [
+  {
+    authors: "Bakir A., Ozbek D., Abazari A., Ozcan O.",
+    year: "2022",
+    title: "SCoReR: A Sensored, Collision Resilient, Foldable Quadcopter",
+    venue: "IEEE International Conference on Soft Robotics (RoboSoft 2023)",
+    location: "Singapore, April 3-7, 2023",
+  },
+  {
+    authors: "Ugur M., Uygun M., Bakir A., Ozcan O.",
+    title: "Path Tracking and Connection Mechanism of a Reconfigurable, Foldable, Legged, and Miniature Robot",
+    venue: "Hittite Journal of Science and Engineering",
+    details: "vol. 9, no. 3, pp. 205-211, Sep. 2022",
+    doi: "10.17350/HJSE19030000272",
+  },
+  {
+    authors: "Mahkam, N., Bakir, A., Ozcan, O.",
+    title: "Miniature Modular Legged Robot with Compliant Backbones",
+    venue: "IEEE Robotics & Automation Letters",
+    details: "vol. 5, no. 3, pp. 3923-3930, 2020",
+    doi: "10.1109/LRA.2020.2982362",
   },
 ];
 
 export const projects = [
   {
-    id: "distributed-cache",
-    title: "Distributed Cache System",
-    summary: "A high-performance, distributed caching solution with consistent hashing and automatic failover capabilities.",
-    description: "Built a production-ready distributed cache that handles millions of requests per second across multiple nodes. Features include consistent hashing for even distribution, automatic node discovery, and seamless failover handling.",
-    problem: "Existing caching solutions couldn't meet our latency requirements at scale, and commercial options were too expensive for our use case.",
-    solution: "Implemented a custom solution using Go with a focus on minimal allocations and zero-copy operations. Used SWIM protocol for cluster membership and gossip-based state synchronization.",
-    outcome: "Achieved sub-millisecond p99 latency at 1M+ QPS. Reduced infrastructure costs by 70% compared to commercial alternatives. Now open-sourced with 2K+ GitHub stars.",
-    tech: ["Go", "gRPC", "Raft", "Docker"],
-    status: "completed" as const,
-    year: 2023,
-    category: "Infrastructure",
-    metrics: [
-      { label: "Requests/sec", value: "1M+" },
-      { label: "P99 Latency", value: "<1ms" },
-      { label: "GitHub Stars", value: "2.4K" },
+    id: "aerial-robot-team",
+    title: "Affordable, Miniature, and Coordinated Aerial Robot Team for Infrastructure Inspection",
+    period: "September 2020 - August 2022",
+    location: "Miniature Robotics Laboratory, Bilkent University",
+    objective: "To design and manufacture a flying robot team consisting of at least 3 robots, to be used in infrastructure inspection",
+    responsibilities: [
+      "All tasks related to autonomous robot controls, such as designing the attitude, altitude, position and heading controllers of the robot",
+      "All tasks related to autonomous flight such as path planning",
     ],
-    links: {
-      github: "https://github.com",
-      demo: null,
-    },
+    category: "Research",
   },
   {
-    id: "realtime-collab",
-    title: "Real-time Collaboration Engine",
-    summary: "CRDT-based collaboration framework enabling conflict-free real-time editing for any data structure.",
-    description: "Developed a flexible collaboration engine that can be integrated into any application requiring real-time sync. Uses CRDTs (Conflict-free Replicated Data Types) to ensure eventual consistency without central coordination.",
-    problem: "Building real-time collaboration features from scratch is complex and error-prone. Teams often reinvent the wheel or rely on heavy third-party solutions.",
-    solution: "Created a modular TypeScript library with pluggable CRDT implementations for different data types. Includes presence awareness, undo/redo support, and offline-first capabilities.",
-    outcome: "Integrated into 3 production applications. Handles 10K+ concurrent users with <100ms sync latency. Published as open-source with active community contributions.",
-    tech: ["TypeScript", "WebSocket", "Yjs", "IndexedDB"],
-    status: "completed" as const,
-    year: 2023,
-    category: "Library",
-    metrics: [
-      { label: "Concurrent Users", value: "10K+" },
-      { label: "Sync Latency", value: "<100ms" },
-      { label: "npm Downloads", value: "50K/mo" },
+    id: "modular-robot",
+    title: "Modular Miniature Foldable Robot Analysis and Design",
+    period: "May 2018 - August 2020",
+    location: "Miniature Robotics Laboratory, Bilkent University",
+    objective: "To have a perfectly functioning PCB under many different circumstances, which is easy to program, and easy and cheap to build.",
+    responsibilities: [
+      "General design of robots",
+      "All tasks related to PCBs, such as design, component selection, and soldering",
+      "Design of the foldability aspect of robots (Since the robots are produced from PET sheets, the main task is to think and design the robots in 2-D, which will function as desired when folded to 3-D.)",
     ],
-    links: {
-      github: "https://github.com",
-      demo: "https://demo.example.com",
-    },
+    category: "Research",
   },
   {
-    id: "ml-pipeline",
-    title: "ML Feature Pipeline",
-    summary: "Automated feature engineering and serving platform for machine learning models at scale.",
-    description: "End-to-end platform for computing, storing, and serving ML features with point-in-time correctness. Supports both batch and streaming feature computation.",
-    problem: "Data scientists spent 60% of their time on feature engineering infrastructure instead of model development. Feature serving was a major bottleneck for model deployment.",
-    solution: "Built a unified platform using Apache Flink for streaming, dbt for batch processing, and a custom feature store with time-travel capabilities.",
-    outcome: "Reduced feature development time by 80%. Enabled real-time features for fraud detection, improving model accuracy by 25%.",
-    tech: ["Python", "Apache Flink", "dbt", "Redis", "Kafka"],
-    status: "completed" as const,
-    year: 2022,
-    category: "Data",
-    metrics: [
-      { label: "Features Computed", value: "10K+" },
-      { label: "Daily Events", value: "1B+" },
-      { label: "Latency (P99)", value: "<10ms" },
+    id: "senior-design",
+    title: "Senior Design Project: Designing and Building a Half-Autonomous Drone",
+    period: "September 2019 - June 2020",
+    location: "Bilkent University",
+    objective: "To design a half-autonomous drone which can detect the child from a designated altitude by a thermal camera and inform the authorities.",
+    responsibilities: [
+      "All tasks related to electronics, such as design, component selection, and soldering",
+      "Checking the whole system and troubleshooting",
     ],
-    links: {
-      github: null,
-      demo: null,
-    },
+    category: "Academic",
   },
   {
-    id: "dev-portal",
-    title: "Developer Portal",
-    summary: "Internal developer platform with service catalog, documentation, and self-service infrastructure provisioning.",
-    description: "Comprehensive internal developer portal that serves as the single entry point for all engineering resources. Includes service catalog, API documentation, runbooks, and infrastructure provisioning.",
-    problem: "Engineers wasted hours navigating between different tools and documentation sources. Onboarding new team members took weeks.",
-    solution: "Built a unified portal using Next.js with a plugin architecture for extensibility. Integrated with existing tools (GitHub, PagerDuty, Datadog) via APIs.",
-    outcome: "Reduced onboarding time from 2 weeks to 3 days. 95% of engineers use it daily. Became a template for other teams in the organization.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "GraphQL"],
-    status: "ongoing" as const,
-    year: 2024,
-    category: "Platform",
-    metrics: [
-      { label: "Daily Active Users", value: "500+" },
-      { label: "Services Cataloged", value: "200+" },
-      { label: "Time Saved", value: "40hrs/wk" },
+    id: "mech-society",
+    title: "Bilkent University Mechanical Engineering Society Projects",
+    period: "2015 - 2018",
+    location: "Bilkent University",
+    subProjects: [
+      { title: "Designing/Building a CNC plane cutting machine", period: "September 2015 - June 2016" },
+      { title: "Designing/Building an RC plane", period: "September 2016 - June 2017" },
+      { title: "Designing/Building a CNC egg painting robot", period: "September 2017 - June 2018" },
     ],
-    links: {
-      github: null,
-      demo: null,
-    },
+    category: "Society",
   },
   {
-    id: "cli-toolkit",
-    title: "CLI Development Toolkit",
-    summary: "A batteries-included framework for building beautiful and performant command-line applications.",
-    description: "Developer-friendly toolkit for creating CLI applications with built-in support for configuration management, plugin systems, and interactive prompts.",
-    problem: "Building production-quality CLI tools requires solving the same problems repeatedly: argument parsing, configuration, output formatting, etc.",
-    solution: "Created a composable toolkit in Rust that handles common CLI concerns while remaining lightweight. Includes a test harness for snapshot testing CLI output.",
-    outcome: "Used by 50+ internal tools. Published as open source with growing adoption. Featured in 'This Week in Rust' newsletter.",
-    tech: ["Rust", "Clap", "Tokio"],
-    status: "ongoing" as const,
-    year: 2024,
-    category: "Developer Tools",
-    metrics: [
-      { label: "Crates.io Downloads", value: "15K+" },
-      { label: "Internal Tools", value: "50+" },
-      { label: "Contributors", value: "12" },
+    id: "tubitak",
+    title: "TUBITAK Efficiency Challenge Electric Vehicle",
+    period: "February - October 2018",
+    location: "Bilkent University Team",
+    category: "Competition",
+  },
+  {
+    id: "term-projects",
+    title: "Term Projects",
+    location: "Bilkent University",
+    subProjects: [
+      { title: "Designing and building a compressed air engine", semester: "2nd Semester" },
+      { title: "Designing and building a crane made of spaghetti", semester: "3rd Semester" },
+      { title: "Designing and building a cup holder suitable for all cups available in Starbucks", semester: "4th Semester" },
+      { title: "Modeling the cooling behavior of a vacuum flask using the principles of heat transfer", semester: "4th Semester" },
+      { title: "Designing and modeling a compression and tension load cell", semester: "5th Semester" },
+      { title: "Designing and building a rover which can cross a gap as large as its length", semester: "6th Semester" },
     ],
-    links: {
-      github: "https://github.com",
-      demo: null,
-    },
+    category: "Academic",
+  },
+];
+
+export const experience = [
+  {
+    id: 1,
+    company: "EPFL",
+    role: "Teaching Assistant",
+    period: "August 2023 - Present",
+    location: "Lausanne, Switzerland",
+    courses: [
+      "ME410 - Mechanical Product Design and Development",
+      "ME420 - Advanced Design for Sustainable Future",
+    ],
+    type: "teaching",
+  },
+  {
+    id: 2,
+    company: "Bilkent University",
+    role: "Teaching Assistant",
+    period: "September 2020 - July 2023",
+    location: "Ankara, Turkey",
+    courses: [
+      "ME101 - Fundamentals of Mechanical Engineering",
+      "ME384 - Mechatronic Systems",
+      "ME342 - Dynamics and Control II",
+    ],
+    supervisor: "Dr. Onur Ozcan (onurozcan@bilkent.edu.tr)",
+    type: "teaching",
+  },
+  {
+    id: 3,
+    company: "Bronix Engineering Solutions",
+    role: "Embedded Systems and Control",
+    period: "July 2021 - July 2023",
+    location: "Turkey",
+    type: "startup",
+  },
+  {
+    id: 4,
+    company: "Bilkent University - Miniature Robotics Laboratory",
+    role: "Undergraduate Researcher",
+    period: "May 2018 - August 2020",
+    location: "Ankara, Turkey",
+    supervisor: "Dr. Onur Ozcan (onurozcan@bilkent.edu.tr)",
+    type: "research",
+  },
+  {
+    id: 5,
+    company: "Gaziantep University",
+    role: "Summer Orientation Intern",
+    period: "July 2016 - August 2016",
+    location: "Gaziantep, Turkey",
+    advisor: "Prof. Dr. Canan Dulger (canan.dulger@ieu.edu.tr)",
+    type: "internship",
+  },
+  {
+    id: 6,
+    company: "Altinay Robot Technologies",
+    role: "Summer Practice 1 Intern",
+    period: "June 2018 - July 2018",
+    location: "Turkey",
+    coordinator: "Dr. Sakir Baytaroglu (sakir.baytaroglu@bilkent.edu.tr)",
+    type: "internship",
+  },
+  {
+    id: 7,
+    company: "ASELSAN",
+    role: "Summer Practice 2 Intern",
+    period: "July 2019 - August 2019",
+    location: "Turkey",
+    coordinator: "Dr. Sakir Baytaroglu (sakir.baytaroglu@bilkent.edu.tr)",
+    type: "internship",
+  },
+];
+
+export const awards = [
+  {
+    title: "Bilkent University Full Scholarship (M.Sc.)",
+    period: "September 2020 - Present",
+  },
+  {
+    title: "Bilkent University 50% Scholarship (B.Sc.)",
+    period: "September 2015 - June 2020",
+  },
+];
+
+export const languages = [
+  { language: "Turkish", level: "Native" },
+  { language: "English", level: "Fluent" },
+];
+
+export const affiliations = [
+  {
+    title: "Active member, Bilkent University Miniature Robotics Laboratory",
+    period: "May 2018 - July 2023",
+  },
+  {
+    title: "Active member, Bilkent University Mechanical Engineering Society",
+    period: "Sept. 2016 - Sept. 2019",
+  },
+  {
+    title: "Team member, TUBITAK Efficiency Challenge Bilkent University Team",
+    period: "Feb. - Oct. 2018",
+  },
+  {
+    title: "Active member, Bilkent University IEEE Student Branch",
+    period: "Sept. 2015 - June 2016",
+  },
+];
+
+export const interests = [
+  "DIY projects",
+  "Skiing",
+  "Drones",
+  "Basketball",
+  "Water polo",
+  "Electric guitar",
+];
+
+export const references = [
+  {
+    name: "Jamie Paik",
+    title: "Associate Professor",
+    institution: "Institute of Mechanical Engineering, Ecole Polytechnique Federale de Lausanne",
+    phone: "+41 21 693 59 48",
+    email: "jamie.paik@epfl.ch",
+  },
+  {
+    name: "Onur Ozcan",
+    title: "Associate Professor",
+    institution: "Department of Mechanical Engineering, Bilkent University",
+    phone: "+90 (312) 290-2893",
+    email: "onurozcan@bilkent.edu.tr",
+  },
+  {
+    name: "Ali Javili",
+    title: "Associate Professor",
+    institution: "Department of Mechanical Engineering, Bilkent University",
+    phone: "+90 (312) 290-2897",
+    email: "ajavili@bilkent.edu.tr",
+  },
+  {
+    name: "Billur Barshan",
+    title: "Professor",
+    institution: "Department of Electrical and Electronics Engineering, Bilkent University",
+    phone: "+90 (312) 290-2161",
+    email: "billur@ee.bilkent.edu.tr",
   },
 ];
 

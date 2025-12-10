@@ -1,8 +1,7 @@
 import { useParams, Link, Navigate } from "react-router-dom";
-import { ArrowLeft, Github, ExternalLink, Calendar, Tag } from "lucide-react";
+import { ArrowLeft, Calendar, Tag, MapPin, Target } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { projects } from "@/data/cv-data";
-import { cn } from "@/lib/utils";
 
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -28,132 +27,75 @@ const ProjectDetail = () => {
           {/* Header */}
           <header className="max-w-3xl mb-12 opacity-0 animate-fade-up">
             <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span
-                className={cn(
-                  "px-2 py-0.5 text-xs font-mono rounded",
-                  project.status === "completed"
-                    ? "bg-primary/10 text-primary"
-                    : "bg-accent text-accent-foreground"
-                )}
-              >
-                {project.status}
-              </span>
-              <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                <Calendar className="h-3.5 w-3.5" />
-                {project.year}
-              </span>
-              <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                <Tag className="h-3.5 w-3.5" />
-                {project.category}
-              </span>
+              {project.category && (
+                <span className="px-2 py-0.5 text-xs font-mono rounded bg-primary/10 text-primary">
+                  {project.category}
+                </span>
+              )}
+              {project.period && (
+                <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                  <Calendar className="h-3.5 w-3.5" />
+                  {project.period}
+                </span>
+              )}
             </div>
 
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               {project.title}
             </h1>
 
-            <p className="text-lg text-muted-foreground">
-              {project.description}
-            </p>
-
-            {/* Links */}
-            <div className="flex items-center gap-4 mt-6">
-              {project.links.github && (
-                <a
-                  href={project.links.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors text-sm font-medium"
-                >
-                  <Github className="h-4 w-4" />
-                  View Source
-                </a>
-              )}
-              {project.links.demo && (
-                <a
-                  href={project.links.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors text-sm font-medium"
-                >
-                  <ExternalLink className="h-4 w-4" />
-                  Live Demo
-                </a>
-              )}
-            </div>
+            {project.location && (
+              <div className="flex items-center gap-2 text-muted-foreground mb-4">
+                <MapPin className="h-4 w-4" />
+                {project.location}
+              </div>
+            )}
           </header>
 
-          <div className="grid gap-12 lg:grid-cols-3">
-            {/* Main Content */}
-            <div className="lg:col-span-2 space-y-10">
-              {/* Problem */}
+          <div className="max-w-3xl space-y-8">
+            {/* Objective */}
+            {project.objective && (
               <section className="opacity-0 animate-fade-up stagger-1">
-                <h2 className="section-title">The Problem</h2>
+                <h2 className="section-title">Objective</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  {project.problem}
+                  {project.objective}
                 </p>
               </section>
+            )}
 
-              {/* Solution */}
+            {/* Responsibilities */}
+            {project.responsibilities && project.responsibilities.length > 0 && (
               <section className="opacity-0 animate-fade-up stagger-2">
-                <h2 className="section-title">The Solution</h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  {project.solution}
-                </p>
-              </section>
-
-              {/* Outcome */}
-              <section className="opacity-0 animate-fade-up stagger-3">
-                <h2 className="section-title">The Outcome</h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  {project.outcome}
-                </p>
-              </section>
-
-              {/* Placeholder for diagrams/images */}
-              <section className="opacity-0 animate-fade-up stagger-4">
-                <h2 className="section-title">Architecture</h2>
-                <div className="aspect-video rounded-lg bg-muted border border-border/50 flex items-center justify-center">
-                  <span className="text-sm text-muted-foreground font-mono">
-                    Architecture diagram placeholder
-                  </span>
-                </div>
-              </section>
-            </div>
-
-            {/* Sidebar */}
-            <aside className="space-y-8 opacity-0 animate-fade-up stagger-2">
-              {/* Tech Stack */}
-              <div className="p-6 rounded-lg bg-card border border-border/50">
-                <h3 className="section-title mb-4">Tech Stack</h3>
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech) => (
-                    <span key={tech} className="tech-tag">
-                      {tech}
-                    </span>
+                <h2 className="section-title">Responsibilities</h2>
+                <ul className="space-y-2">
+                  {project.responsibilities.map((resp, i) => (
+                    <li key={i} className="text-muted-foreground flex items-start gap-2">
+                      <span className="text-primary mt-1">›</span>
+                      {resp}
+                    </li>
                   ))}
-                </div>
-              </div>
+                </ul>
+              </section>
+            )}
 
-              {/* Metrics */}
-              {project.metrics && project.metrics.length > 0 && (
-                <div className="p-6 rounded-lg bg-card border border-border/50">
-                  <h3 className="section-title mb-4">Key Metrics</h3>
-                  <div className="space-y-4">
-                    {project.metrics.map((metric, index) => (
-                      <div key={index}>
-                        <p className="text-2xl font-mono font-bold text-primary">
-                          {metric.value}
-                        </p>
-                        <p className="text-sm text-muted-foreground">
-                          {metric.label}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </aside>
+            {/* Sub-projects */}
+            {project.subProjects && project.subProjects.length > 0 && (
+              <section className="opacity-0 animate-fade-up stagger-3">
+                <h2 className="section-title">Sub-projects</h2>
+                <ul className="space-y-2">
+                  {project.subProjects.map((sub, i) => (
+                    <li key={i} className="text-muted-foreground flex items-start gap-2">
+                      <span className="text-primary mt-1">›</span>
+                      <span>
+                        {sub.title}
+                        {sub.period && <span className="text-xs font-mono ml-2">({sub.period})</span>}
+                        {sub.semester && <span className="text-xs font-mono ml-2">({sub.semester})</span>}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
           </div>
         </div>
       </article>
