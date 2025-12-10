@@ -60,10 +60,19 @@ export function HeroSection() {
           
           {/* Social Links & CTA */}
           <div className="flex flex-wrap items-center gap-4">
-            <Button className="gap-2">
-              <Download className="h-4 w-4" />
-              Download CV
-            </Button>
+            {personalInfo.cv ? (
+              <Button asChild className="gap-2">
+                <a href={personalInfo.cv} download target="_blank" rel="noopener noreferrer">
+                  <Download className="h-4 w-4" />
+                  Download CV
+                </a>
+              </Button>
+            ) : (
+              <Button className="gap-2">
+                <Download className="h-4 w-4" />
+                Download CV
+              </Button>
+            )}
             
             <div className="flex items-center gap-2">
               <a

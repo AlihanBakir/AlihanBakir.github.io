@@ -3,10 +3,13 @@ export const personalInfo = {
   title: "PhD Candidate in Robotics, Control, and Intelligent Systems",
   summary: "Robotics researcher focused on full-body interaction with surface-based robots. Expertise in mechatronic system design, controller design, programming, signal processing, dynamics and kinematics. Currently pursuing PhD at EPFL's Reconfigurable Robotics Laboratory.",
   email: "alihan.bakir@epfl.ch",
-  phone: "+41 78 208 7000",
+  phone: "+41 21 693 57 37",
+  // Relative path to a downloadable CV file placed in `public/` (e.g. `public/Alihan_BAKIR_CV.pdf`)
+  // Use an absolute URL if hosting the file elsewhere.
+  cv: "/cv_alihanbakir.pdf",
   website: "www.alihanb.com",
   location: "EPFL STI IGM RRL, MED 1 2313 (Batiment MED) Station 9, 1015 Lausanne, Switzerland",
-  github: "https://github.com/AlihanBakir",
+  github: "https://www.github.com/AlihanBakir",
   linkedin: "https://www.linkedin.com/in/alihanbakir/",
 };
 

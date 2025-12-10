@@ -59,15 +59,6 @@ const Contact = () => {
                       <span>{personalInfo.email}</span>
                     </a>
                     <a
-                      href={`tel:${personalInfo.phone}`}
-                      className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group"
-                    >
-                      <div className="p-2 rounded-md bg-muted group-hover:bg-accent transition-colors">
-                        <Phone className="h-5 w-5" />
-                      </div>
-                      <span>{personalInfo.phone}</span>
-                    </a>
-                    <a
                       href={`https://${personalInfo.website}`}
                       target="_blank"
                       rel="noopener noreferrer"
